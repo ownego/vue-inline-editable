@@ -63,7 +63,7 @@
   },
   "homepage": "https://github.com/mihnsen/vue-inline-editable#readme",
   "dependencies": {
-    "vue-promise-button": "^0.1.5",
+    "vue-promise-button": "1.0.0-alpha.3",
     "vue-svg-loader": "^0.16.0"
   }
 }
