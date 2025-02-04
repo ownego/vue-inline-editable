@@ -1,6 +1,6 @@
-@import '~bootstrap/scss/functions';
-@import '~bootstrap/scss/variables';
-@import '~bootstrap/scss/mixins';
+@import '~/bootstrap/scss/functions';
+@import '~/bootstrap/scss/variables';
+@import '~/bootstrap/scss/mixins';
 
 @import 'variables';
 
@@ -8,7 +8,7 @@
 @import 'mixins/form';
 
 // Bootstrap
-@import '~bootstrap/scss/forms';
+@import '~/bootstrap/scss/forms';
 
 // CSS
 @import 'input-types/basic';
