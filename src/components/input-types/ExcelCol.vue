@@ -105,4 +105,8 @@ const saveExcel = (e: any) => {
     return save(e)
   }
 }
+
+defineExpose({
+  edit,
+})
 </script>

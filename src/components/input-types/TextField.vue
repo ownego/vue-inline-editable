@@ -64,4 +64,8 @@ const {
   saveToApi,
   saveAndEmit,
 } = useInput(props, emits)
+
+defineExpose({
+  edit,
+})
 </script>

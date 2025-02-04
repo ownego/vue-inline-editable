@@ -1,10 +1,12 @@
 <template lang="pug">
 component(
   :is="generateFieldByType(type)",
+  ref="component",
   v-bind="props"
 )
 </template>
 <script setup lang="ts">
+import { ref } from 'vue'
 import Basic from './input-types/Basic.vue'
 import TextField from './input-types/TextField.vue'
 import Textarea from './input-types/Textarea.vue'
@@ -29,6 +31,8 @@ interface Props {
 }
 
 const props = defineProps<Props>()
+
+const component = ref(null);
 
 const generateFieldByType: any = (ftype: any) => {
   let inputEl = Basic
@@ -58,4 +62,12 @@ const generateFieldByType: any = (ftype: any) => {
 
   return inputEl
 }
+
+defineExpose({
+  edit: () => {
+    if (component?.value?.edit?.()) {
+      component.value.edit();
+    }
+  },
+});
 </script>
