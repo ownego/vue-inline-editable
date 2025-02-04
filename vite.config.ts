@@ -32,6 +32,7 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src/', import.meta.url)),
       '~': fileURLToPath(new URL('./node_modules', import.meta.url)),
+      '~bootstrap': fileURLToPath(new URL('./node_modules/bootstrap', import.meta.url)),
       types: fileURLToPath(new URL('./types', import.meta.url)),
     },
     dedupe: ['vue'],
