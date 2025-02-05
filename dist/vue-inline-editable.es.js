@@ -1,5 +1,5 @@
 import { defineComponent, ref, computed, openBlock, createElementBlock, normalizeClass, unref, withModifiers, renderSlot, createCommentVNode, withDirectives, createElementVNode, vShow, inject, onMounted, onBeforeUnmount, watch, nextTick, toDisplayString, isRef, withKeys, vModelDynamic, createVNode, withCtx, vModelText, normalizeStyle, createBlock, resolveDynamicComponent, mergeProps } from "vue";
-var PromiseButton_vue_vue_type_style_index_0_lang = /* @__PURE__ */ (() => "@keyframes spinner-border{to{transform:rotate(360deg)}}.spinner-border,.promise-button-spinner{display:inline-block;width:2rem;height:2rem;vertical-align:-.125em;border:.25em solid currentColor;border-right-color:transparent;border-radius:50%;animation:.75s linear infinite spinner-border}.spinner-border-sm{width:1rem;height:1rem;border-width:.2em}@keyframes spinner-grow{0%{transform:scale(0)}50%{opacity:1;transform:none}}.spinner-grow{display:inline-block;width:2rem;height:2rem;vertical-align:-.125em;background-color:currentColor;border-radius:50%;opacity:0;animation:.75s linear infinite spinner-grow}.spinner-grow-sm{width:1rem;height:1rem}@media (prefers-reduced-motion: reduce){.spinner-border,.promise-button-spinner,.spinner-grow{animation-duration:1.5s}}.promise-button{display:inline-flex;align-items:center;justify-content:center}.promise-button-spinner{width:1em;height:1em;border-width:.15em;margin-left:.5em}.promise-button--notext .promise-button-spinner{margin-left:0}.promise-button-visually-hidden{width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}.promise-button-visually-hidden:not(caption){position:absolute!important}\n")();
+var PromiseButton_vue_vue_type_style_index_0_lang = /* @__PURE__ */ (() => "@keyframes spinner-border{to{transform:rotate(360deg)}}.spinner-border,.promise-button-spinner{display:inline-block;width:2rem;height:2rem;vertical-align:-.125em;border:.25em solid currentColor;border-right-color:transparent;border-radius:50%;animation:.75s linear infinite spinner-border}.spinner-border-sm{width:1rem;height:1rem;border-width:.2em}@keyframes spinner-grow{0%{transform:scale(0)}50%{opacity:1;transform:none}}.spinner-grow{display:inline-block;width:2rem;height:2rem;vertical-align:-.125em;background-color:currentColor;border-radius:50%;opacity:0;animation:.75s linear infinite spinner-grow}.spinner-grow-sm{width:1rem;height:1rem}@media (prefers-reduced-motion: reduce){.spinner-border,.promise-button-spinner,.spinner-grow{animation-duration:1.5s}}.promise-button{display:inline-flex;align-items:center;justify-content:center}.promise-button-spinner{width:1em;height:1em;border-width:.15em;margin-left:.5em}.promise-button--notext .promise-button-spinner{margin-left:0}.promise-button-visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}\n")();
 const _hoisted_1$6 = ["onClick", "disabled"];
 const _hoisted_2$6 = { key: 0 };
 const _hoisted_3$6 = /* @__PURE__ */ createElementVNode("span", { class: "promise-button-text" }, null, -1);
@@ -19,7 +19,7 @@ const _sfc_main$5 = /* @__PURE__ */ defineComponent({
     disabled: { type: Boolean, default: false },
     forceProcessing: { type: Boolean, default: false }
   },
-  setup(__props) {
+  setup(__props, { expose }) {
     const props = __props;
     const isProcessing = ref(false);
     const isShowText = computed(() => {
@@ -39,6 +39,10 @@ const _sfc_main$5 = /* @__PURE__ */ defineComponent({
         });
       }
     };
+    expose({
+      handle,
+      isShowText
+    });
     return (_ctx, _cache) => {
       return openBlock(), createElementBlock("button", {
         class: normalizeClass(["promise-button", { "promise-button--notext": !unref(isShowText) }]),
@@ -727,6 +731,9 @@ var _index = /* @__PURE__ */ (() => `.form-label{margin-bottom:.5rem}.col-form-l
 `)();
 const Plugin = {
   install(Vue, options = {}) {
+    if (options.compatConfig) {
+      _sfc_main.compatConfig = options.compatConfig;
+    }
     Vue.component("VueInlineEditable", _sfc_main);
     const pluginOptions = {
       handle: options.handle || null
