@@ -10,6 +10,10 @@ import './assets/scss/_index.scss'
 
 const Plugin = {
   install(Vue: App, options: any = {}) {
+    if (options.compatConfig) {
+      VueInlineEditable.compatConfig = options.compatConfig;
+    }
+
     Vue.component('VueInlineEditable', VueInlineEditable)
 
     const pluginOptions = {
