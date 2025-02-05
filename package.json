@@ -19,7 +19,7 @@
     "index.d.ts",
     "package.json"
   ],
-  "module": "./dist/vue-inline-editor.umd.js",
+  "module": "./dist/vue-inline-editable.umd.js",
   "keywords": [
     "xedit",
     "inline",
