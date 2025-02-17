@@ -23,7 +23,7 @@ export default function(props, emits) {
   const isProcessing = ref(false)
   const input = ref(null)
 
-  const previewValue = computed(() => props.modelValue)
+  const previewValue = computed(() => props.modelValue || props.emptyValue)
   const isInline = computed(() => props.placement === 'inline')
   const isPopup = computed(() => props.placement === 'popup')
 

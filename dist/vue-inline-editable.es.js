@@ -75,7 +75,7 @@ function useInput(props, emits) {
   const isEdit = ref(false);
   const isProcessing = ref(false);
   const input = ref(null);
-  const previewValue = computed(() => props.modelValue);
+  const previewValue = computed(() => props.modelValue || props.emptyValue);
   const isInline = computed(() => props.placement === "inline");
   const isPopup = computed(() => props.placement === "popup");
   const classes = computed(() => {
